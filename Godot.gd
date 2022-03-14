@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 var velocitat := 300
 var direccio = Vector2(0,0)
@@ -28,7 +28,23 @@ func _process(delta):
 #	if position.y <= 0:
 #		velocitat.y = -velocitat.y
 #		position.y = 0
-	position += direccio * velocitat * delta
+	direccio = Vector2.ZERO
 	if Input.is_action_pressed("mou dreta"):
-		direccio = Vector2(1,0)   		 
-		
+		direccio += Vector2.RIGHT
+#		modulate = Color(1,0,0)  		 
+	if Input.is_action_pressed("mou esquerra"):
+		direccio += Vector2.LEFT
+	if Input.is_action_pressed("mou adalt"):
+		direccio += Vector2.UP
+	if Input.is_action_pressed("mou abaix"):
+		direccio += Vector2.DOWN
+	position += direccio.normalized() * velocitat * delta
+	
+
+
+func _on_Personatge_area_entered(area):
+	modulate = Color(1,0,0) # Replace with function body.
+
+
+func _on_Personatge_area_exited(area):
+	modulate = Color(1,1,1) # Replace with function body.
