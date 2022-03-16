@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocitat := 300
+var velocitat := 500
 var direccio = Vector2(0,0)
 
 #export per a que aparegui en tots llocs, var per a definir una variable i func
@@ -8,7 +8,7 @@ var direccio = Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rotation_degrees = 90
+	rotation_degrees = 0
 	position = Vector2(500,300)
 	
 
@@ -31,20 +31,30 @@ func _process(delta):
 	direccio = Vector2.ZERO
 	if Input.is_action_pressed("mou dreta"):
 		direccio += Vector2.RIGHT
+		$Godot.rotation_degrees += 300003000030000 
 #		modulate = Color(1,0,0)  		 
 	if Input.is_action_pressed("mou esquerra"):
 		direccio += Vector2.LEFT
-	if Input.is_action_pressed("mou adalt"):
+		$Godot.rotation_degrees += 300003000030000
 		direccio += Vector2.UP
+		$Godot.rotation_degrees += 300003000030000
 	if Input.is_action_pressed("mou abaix"):
 		direccio += Vector2.DOWN
+		$Godot.rotation_degrees += 300003000030000
 	position += direccio.normalized() * velocitat * delta
+	direccio= Vector2(0,0)
+
+
+func _on_Personatge_area_entered(area: Area2D):
+	 # Replace with function body.
 	
-
-
-func _on_Personatge_area_entered(area):
-	modulate = Color(1,0,0) # Replace with function body.
-
-
+	if area.is_in_group('Final'):
+		modulate = Color(1,0,0)
+		$Godot.rotation_degrees = 45 
+	if area.is_in_group('Inici'):
+		modulate = Color(0,1,0)
+		$Godot.rotation_degrees = -45
+		
 func _on_Personatge_area_exited(area):
 	modulate = Color(1,1,1) # Replace with function body.
+	$Godot.rotation_degrees = 0
