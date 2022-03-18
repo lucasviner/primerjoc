@@ -6,7 +6,22 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Terra" parent="." instance=ExtResource( 1 )]
-position = Vector2( 331, 369 )
+position = Vector2( -119, 277 )
+scale = Vector2( 0.5, 0.5 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 452, 200 )
+[node name="Personatge" parent="." instance=ExtResource( 2 )]
+position = Vector2( 30, 80 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Terra2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13, -55 )
+rotation = 1.03673
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Terra3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 68, 222 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Terra4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -638, -798 )
+scale = Vector2( 3.02, 3 )

@@ -31,16 +31,17 @@ func _process(delta):
 	direccio = Vector2.ZERO
 	if Input.is_action_pressed("mou dreta"):
 		direccio += Vector2.RIGHT
-		$Godot.rotation_degrees += 300003000030000 
+		
 #		modulate = Color(1,0,0)  		 
 	if Input.is_action_pressed("mou esquerra"):
 		direccio += Vector2.LEFT
-		$Godot.rotation_degrees += 300003000030000
+		
+	if Input.is_action_pressed("mou adalt"):	
 		direccio += Vector2.UP
-		$Godot.rotation_degrees += 300003000030000
+		
 	if Input.is_action_pressed("mou abaix"):
 		direccio += Vector2.DOWN
-		$Godot.rotation_degrees += 300003000030000
+		
 	position += direccio.normalized() * velocitat * delta
 	direccio= Vector2(0,0)
 
