@@ -30,5 +30,5 @@ shape = SubResource( 2 )
 position = Vector2( 71, 92 )
 
 [node name="Terra" parent="." instance=ExtResource( 3 )]
-position = Vector2( -495, 271 )
+position = Vector2( 73, 523 )
 scale = Vector2( 2, 1 )

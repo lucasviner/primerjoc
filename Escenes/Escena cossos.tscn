@@ -5,38 +5,55 @@
 [ext_resource path="res://Escenes/Final.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 20, 27 )
 
 [node name="Terra" parent="." instance=ExtResource( 1 )]
-position = Vector2( 85, 394 )
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( 85, 435 )
+scale = Vector2( 0.5, 0.35 )
 
 [node name="Personatge" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10, 115 )
+position = Vector2( 475, 509 )
 scale = Vector2( 0.35, 0.35 )
 
 [node name="Camera2D" type="Camera2D" parent="Personatge"]
 current = true
 
 [node name="Terra2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -9, -28 )
+position = Vector2( -4.00001, 267 )
 rotation = 1.03673
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.5, 0.35 )
 
 [node name="Terra3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 321, 290 )
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( 137, 229 )
+scale = Vector2( 0.5, 0.35 )
 
 [node name="Terra4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -785, -786 )
-scale = Vector2( 3.02, 3 )
+position = Vector2( 878, 180 )
+scale = Vector2( 0.5, 0.35 )
 
 [node name="Terra5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 752, 204 )
+position = Vector2( 459, 216 )
 rotation = 1.5708
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.5, 0.22 )
 
 [node name="Final" parent="." instance=ExtResource( 3 )]
-position = Vector2( 758, 181 )
-scale = Vector2( 1, 10 )
+position = Vector2( 890, 161 )
+rotation = -1.5708
+scale = Vector2( 1, 5 )
+
+[node name="Terra6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 493, 635 )
+rotation = -3.14159
+scale = Vector2( 8.05, 5 )
+
+[node name="Terra11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 577, 303 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.3 )
+
+[node name="Terra10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 696, 223 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.3 )
 
 [connection signal="body_entered" from="Final" to="Personatge" method="_on_Final_body_entered"]
