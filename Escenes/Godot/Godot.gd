@@ -49,13 +49,13 @@ func _process(delta):
 func _on_Personatge_area_entered(area: Area2D):
 	 # Replace with function body.
 	
-	if area.is_in_group('Final'):
+	if $AnimatedSprite.is_in_group('Final'):
 		modulate = Color(1,0,0)
-		$Godot.rotation_degrees = 45 
-	if area.is_in_group('Inici'):
+		 
+	if $AnimatedSprite.is_in_group('Inici'):
 		modulate = Color(0,1,0)
-		$Godot.rotation_degrees = -45
+		
 		
 func _on_Personatge_area_exited(area):
 	modulate = Color(1,1,1) # Replace with function body.
-	$Godot.rotation_degrees = 0
+	

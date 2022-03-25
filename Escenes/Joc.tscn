@@ -1,34 +1,54 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Escenes/Personatge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenes/Terres segona escena.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenes/Cos.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Escenes/Terra.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22.375, 212.391 )
+[ext_resource path="res://Escenes/Personatge 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenes/Cos.gd" type="Script" id=4]
+[ext_resource path="res://Escenes/Floor segon pers.tscn" type="PackedScene" id=5]
 
 [node name="Joc" type="Node2D"]
 
-[node name="Personatge" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2, -3 )
+[node name="Pers blau" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8, 576 )
+scale = Vector2( 0.35, 0.35 )
 
-[node name="Area1" type="Area2D" parent="." groups=["Final"]]
-position = Vector2( 59, 35 )
+[node name="Floor blue5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 489, 340 )
+scale = Vector2( 10.5, 0.5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area1"]
-position = Vector2( 822, 247 )
-shape = SubResource( 2 )
+[node name="Floor blue4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 425, 450 )
+scale = Vector2( 0.75, 0.5 )
 
-[node name="Area2" type="Area2D" parent="." groups=["Inici"]]
-position = Vector2( 59, 35 )
+[node name="Floor blue3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 246, 546 )
+scale = Vector2( 0.75, 0.5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2"]
-position = Vector2( 2, 240 )
-shape = SubResource( 2 )
+[node name="Floor blue2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 128, 438 )
+scale = Vector2( 0.75, 0.5 )
 
-[node name="Personatge2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 71, 92 )
+[node name="Floor blue" parent="." instance=ExtResource( 5 )]
+position = Vector2( 28, 596 )
+scale = Vector2( 0.75, 0.5 )
 
-[node name="Terra" parent="." instance=ExtResource( 3 )]
-position = Vector2( 73, 523 )
-scale = Vector2( 2, 1 )
+[node name="Pers rosa" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8, 45 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 4 )
+
+[node name="Floor pink" parent="." instance=ExtResource( 1 )]
+position = Vector2( 12, 79 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Floor pink2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 124, 242 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Floor pink3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 228, 119 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Floor pink4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 503, 333 )
+scale = Vector2( 9, 0.5 )

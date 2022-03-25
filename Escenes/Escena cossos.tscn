@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Escenes/Terra.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenes/Cos.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Escenes/Final.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenes/Plataformes.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 20, 27 )
@@ -12,7 +13,7 @@ position = Vector2( 85, 435 )
 scale = Vector2( 0.5, 0.35 )
 
 [node name="Personatge" parent="." instance=ExtResource( 2 )]
-position = Vector2( 475, 509 )
+position = Vector2( 248, 543 )
 scale = Vector2( 0.35, 0.35 )
 
 [node name="Camera2D" type="Camera2D" parent="Personatge"]
@@ -28,32 +29,41 @@ position = Vector2( 137, 229 )
 scale = Vector2( 0.5, 0.35 )
 
 [node name="Terra4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 878, 180 )
-scale = Vector2( 0.5, 0.35 )
-
-[node name="Terra5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 459, 216 )
+position = Vector2( 357, 237 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.22 )
 
-[node name="Final" parent="." instance=ExtResource( 3 )]
-position = Vector2( 890, 161 )
+[node name="Final" parent="." groups=["Canvi escena"] instance=ExtResource( 3 )]
+position = Vector2( 872, 177 )
 rotation = -1.5708
 scale = Vector2( 1, 5 )
 
+[node name="Terra5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 499, 271 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.3 )
+
 [node name="Terra6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 493, 635 )
-rotation = -3.14159
-scale = Vector2( 8.05, 5 )
-
-[node name="Terra11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 577, 303 )
+position = Vector2( 656, 227 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.3 )
 
-[node name="Terra10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 696, 223 )
+[node name="Plataformes" parent="." instance=ExtResource( 4 )]
+position = Vector2( 485, 578 )
+scale = Vector2( 12, 5 )
+
+[node name="Plataformes2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 487, -20 )
+scale = Vector2( 12, 5 )
+
+[node name="Plataformes3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -76, 279 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.3 )
+scale = Vector2( 7.3, 4 )
+
+[node name="Plataformes4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1041, 279 )
+rotation = 1.5708
+scale = Vector2( 7.3, 4 )
 
 [connection signal="body_entered" from="Final" to="Personatge" method="_on_Final_body_entered"]

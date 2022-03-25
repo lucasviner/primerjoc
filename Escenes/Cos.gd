@@ -43,4 +43,7 @@ func anima(velocitat: Vector2):
 
 func _on_Final_body_entered(body):
 	get_tree().change_scene("res://Escenes/Joc.tscn")
-	
+#	if $AnimatedSprite.is_in_group('Canvi escena'):
+#		modulate = Color(1,0,0)
+
+
