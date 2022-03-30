@@ -41,17 +41,21 @@ func anima(velocitat: Vector2):
 	
 
 
-func _on_Final_body_entered(body):
+func _on_Final_body_entered(_body):
 	get_tree().change_scene("res://Escenes/Joc.tscn")
 #	if $AnimatedSprite.is_in_group('Canvi escena'):
 #		modulate = Color(1,0,0)
+	
 
 
 
+func _on_Area2D_body_entered(_body):
+	get_tree().reload_current_scene()
+	
 
-func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://Escenes/Joc.tscn")
+func _on_Pinxos2_body_entered(_body):
+	get_tree().reload_current_scene()
 
+#func _on_Pinxos_body_entered(body):
+#	get_tree().change_scene("res://Escenes/Joc.tscn")
 
-func _on_Pinxos2_body_entered(body):
-	get_tree().change_scene("res://Escenes/Escena cossos.tscn")
