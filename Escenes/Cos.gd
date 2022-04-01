@@ -51,6 +51,7 @@ func _on_Final_body_entered(_body):
 
 func _on_Area2D_body_entered(_body):
 	get_tree().reload_current_scene()
+	position = Vector2(1115,320)
 	
 
 func _on_Pinxos2_body_entered(_body):
@@ -59,3 +60,11 @@ func _on_Pinxos2_body_entered(_body):
 #func _on_Pinxos_body_entered(body):
 #	get_tree().change_scene("res://Escenes/Joc.tscn")
 
+
+
+func _on_Pinxos_body_entered(body):
+	get_tree().reload_current_scene()
+
+
+func _on_Porta_body_entered(body):
+	get_tree().change_scene("res://Escenes/Escena final.tscn")
